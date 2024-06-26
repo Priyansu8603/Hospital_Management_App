@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/favouriteDoctor"
+        android:name="com.example.hospital_management_app.FavouriteDoctor"
+        android:label="fragment_favourite_doctor"
+        tools:layout="@layout/fragment_favourite_doctor" >
+        <action
+            android:id="@+id/action_favouriteDoctor_to_doctorDetail"
+            app:destination="@id/doctorDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAppointment"
+        android:name="com.example.hospital_management_app.MyAppointment"
+        android:label="fragment_my_appointment"
+        tools:layout="@layout/fragment_my_appointment" />
+    <fragment
+        android:id="@+id/doctorDetail"
+        android:name="com.example.hospital_management_app.DoctorDetail"
+        android:label="fragment_doctor_detail"
+        tools:layout="@layout/fragment_doctor_detail" >
+        <action
+            android:id="@+id/action_doctorDetail_to_takeAppointment"
+            app:destination="@id/takeAppointment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeAppointment"
+        android:name="com.example.hospital_management_app.TakeAppointment"
+        android:label="fragment_take_appointment"
+        tools:layout="@layout/fragment_take_appointment" >
+        <action
+            android:id="@+id/action_takeAppointment_to_appointmentDetail"
+            app:destination="@id/appointmentDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentDetail"
+        android:name="com.example.hospital_management_app.AppointmentDetail"
+        android:label="fragment_appointment_detail"
+        tools:layout="@layout/fragment_appointment_detail" />
+    <fragment
+        android:id="@+id/featureDoctor"
+        android:name="com.example.hospital_management_app.UI.Fragment.FeatureDoctor"
+        android:label="fragment_feature_doctor"
+        tools:layout="@layout/fragment_feature_doctor" >
+        <action
+            android:id="@+id/action_featureDoctor_to_doctorDetail"
+            app:destination="@id/doctorDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/popularDoctor"
+        android:name="com.example.hospital_management_app.PopularDoctor"
+        android:label="fragment_popular_doctor"
+        tools:layout="@layout/fragment_popular_doctor" >
+        <action
+            android:id="@+id/action_popularDoctor_to_doctorDetail"
+            app:destination="@id/doctorDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.hospital_management_app.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_popularDoctor"
+            app:destination="@id/popularDoctor" />
+        <action
+            android:id="@+id/action_homeFragment_to_featureDoctor"
+            app:destination="@id/featureDoctor" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouriteDoctor"
+            app:destination="@id/favouriteDoctor" />
+        <action
+            android:id="@+id/action_homeFragment_to_myAppointment"
+            app:destination="@id/myAppointment" />
+    </fragment>
+
+
+</navigation>
