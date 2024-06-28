@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/popularDoctor"
-        android:name="com.example.hospital_management_app.PopularDoctor"
+        android:name="com.example.hospital_management_app.UI.Fragment.PopularDoctor"
         android:label="fragment_popular_doctor"
         tools:layout="@layout/fragment_popular_doctor" >
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.hospital_management_app.HomeFragment"
+        android:name="com.example.hospital_management_app.UI.Fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -72,13 +72,12 @@
         <action
             android:id="@+id/action_homeFragment_to_featureDoctor"
             app:destination="@id/featureDoctor" />
-        <action
-            android:id="@+id/action_homeFragment_to_favouriteDoctor"
-            app:destination="@id/favouriteDoctor" />
-        <action
-            android:id="@+id/action_homeFragment_to_myAppointment"
-            app:destination="@id/myAppointment" />
     </fragment>
+    <fragment
+        android:id="@+id/paymentsFragment"
+        android:name="com.example.hospital_management_app.UI.Fragment.PaymentsFragment"
+        android:label="fragment_payments"
+        tools:layout="@layout/fragment_payments" />
 
 
 </navigation>

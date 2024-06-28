@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/home" />
+
+    <item android:id="@+id/favouriteDoctor"
+        android:title="Favourite"
+        android:icon="@drawable/heart2" />
+
+    <item android:id="@+id/myAppointment"
+        android:title="My Appointment"
+        android:icon="@drawable/calendar" />
+
+    <item android:id="@+id/paymentsFragment"
+        android:title="Payments"
+        android:icon="@drawable/payment" />
+
+</menu>

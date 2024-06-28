@@ -2,4 +2,6 @@
     <string name="app_name">Hospital_Management_App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="see_all"><![CDATA[See all>]]></string>
+    <string name="feature_doctor">Feature Doctor</string>
 </resources>
