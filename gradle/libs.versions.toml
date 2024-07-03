@@ -1,27 +1,28 @@
 [versions]
 agp = "8.5.0"
-androidxEspressoCore = "3.6.0"
-androidxJunit = "1.2.0"
-androidxJunitVersion = "1.2.0"
+androidxEspressoCore = "3.6.1"
+androidxJunit = "1.2.1"
+androidxJunitVersion = "1.2.1"
 appcompatVersion = "1.7.0"
+circleimageview = "3.1.0"
 coordinatorlayout = "1.2.0"
 coreKtxVersion = "1.13.1"
 dotsindicator = "5.0"
-dotsindicatorVersion = "4.2"
-espressoCoreVersion = "3.6.0"
-fragment = "1.8.0"
+dotsindicatorVersion = "5.0"
+espressoCoreVersion = "3.6.1"
+fragment = "1.8.1"
 glide = "4.12.0"
 hiltAndroidGradlePlugin = "2.48"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.2.0"
-espressoCore = "3.6.0"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 appcompat = "1.7.0"
 kotlinGradlePlugin = "1.6.21"
 kotlinxCoroutinesCore = "1.7.3"
 legacySupportV4 = "1.0.0"
-lifecycleViewmodelKtx = "2.8.2"
+lifecycleViewmodelKtx = "2.8.3"
 loggingInterceptor = "4.5.0"
 material = "1.12.0"
 activity = "1.9.0"
@@ -50,6 +51,7 @@ androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx",
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }

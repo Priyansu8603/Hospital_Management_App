@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:src="@drawable/image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Dr. John Johnson"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="@id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="@id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/job_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Dentist"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/name_txt" />
+
+        <TextView
+            android:id="@+id/experience_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="7 Years experience"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/job_txt"/>
+
+        <TextView
+            android:id="@+id/nxt_available_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Next Available"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintEnd_toEndOf="@id/imageView"/>
+
+        <TextView
+            android:id="@+id/timing_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="10:00 AM tommorow"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/nxt_available_txt"
+            app:layout_constraintTop_toBottomOf="@id/nxt_available_txt"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="Book Now"
+            android:textAllCaps="false"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/rubik"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/green_dot_view"
+            android:background="@drawable/green_dot"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/experience_txt"/>
+
+        <TextView
+            android:id="@+id/patient_count_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="79 Patient Stories"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@id/green_dot_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/experience_txt"/>
+
+        <ImageView
+            android:background="@drawable/heart_selected"
+            android:id="@+id/heart_favourite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heart2"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/name_txt"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

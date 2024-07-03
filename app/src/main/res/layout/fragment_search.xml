@@ -41,13 +41,13 @@
 
                 <TextView
                     android:id="@+id/tvToolbarTitle"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="15dp"
                     android:fontFamily="@font/rubik"
                     android:padding="5dp"
-                    android:text="Favourite Doctors"
+                    android:text="Find Doctors"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -58,13 +58,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
             </LinearLayout>
 
             <EditText
+                android:id="@+id/searchbar_searchFrag"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/searchbar_bg"
@@ -73,16 +76,16 @@
                 android:fontFamily="@font/poppinmedium"
                 android:hint="Search..."
                 android:inputType="text"
+                android:focusable="true"
                 android:padding="8dp"
                 android:paddingStart="15dp"
                 android:textColor="#7E7878"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/find_txt" />
+                android:textStyle="italic" />
+
 
             <LinearLayout
-
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginTop="30dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -93,13 +96,11 @@
                     android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:padding="10dp"
-                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                        app:spanCount="2"
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:listitem="@layout/item_favourite_doctor"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_find_doctor"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

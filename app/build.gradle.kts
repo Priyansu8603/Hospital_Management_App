@@ -96,4 +96,7 @@ dependencies {
     ksp(libs.compiler)
 
     implementation (libs.dotsindicator.v42)
+
+    implementation (libs.circleimageview)
+
 }

@@ -61,6 +61,7 @@
                         app:layout_constraintTop_toBottomOf="@id/name_txt" />
 
                     <EditText
+                        android:id="@+id/searchBar_homeFrag"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginStart="20dp"
@@ -72,7 +73,10 @@
                         android:drawablePadding="15dp"
                         android:fontFamily="@font/poppinmedium"
                         android:hint="Search..."
-                        android:inputType="text"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:clickable="true"
+                        android:focusableInTouchMode="false"
                         android:padding="8dp"
                         android:paddingStart="15dp"
                         android:textColor="#7E7878"
@@ -298,6 +302,8 @@
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -310,9 +316,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="1"
+                    android:orientation="horizontal"
                     android:id="@+id/popularDoctor_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    tools:listitem="@layout/item_popular_doctor"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -368,6 +379,12 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    tools:listitem="@layout/item_feature_doctor"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
                     android:id="@+id/featureDoctor_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
