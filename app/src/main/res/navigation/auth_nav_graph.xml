@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/splash_fragment">
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.example.hospital_management_app.UI.Fragment.Splash"
+        android:label="fragment_splash_fragment"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_splash_fragment_to_onboardingOne"
+            app:destination="@id/onboardingOne" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.hospital_management_app.UI.Fragment.Login"
+        android:label="fragment_login_fragment"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_fragment_to_continue_with_number"
+            app:destination="@id/continue_with_number"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/continue_with_number"
+        android:name="com.example.hospital_management_app.UI.Fragment.ContinueWithNumber"
+        android:label="fragment_continue_with_number"
+        tools:layout="@layout/fragment_continue_with_number" >
+        <action
+            android:id="@+id/action_continue_with_number_to_enterOtp"
+            app:destination="@id/enterOtp"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/continue_with_number" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterOtp"
+        android:name="com.example.stock_market_design.ui.fragments.EnterOtp"
+        android:label="fragment_enter_otp"
+        tools:layout="@layout/fragment_enter_otp">
+        <argument
+            android:name="number"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingOne"
+        android:name="com.example.hospital_management_app.UI.Fragment.OnboardingOne"
+        android:label="fragment_onboarding_one"
+        tools:layout="@layout/fragment_onboarding_one" >
+        <action
+            android:id="@+id/action_onboardingOne_to_onboardingTwo"
+            app:destination="@id/onboardingTwo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/onboardingOne" />
+        <action
+            android:id="@+id/action_onboardingOne_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom"
+            app:popUpTo="@id/onboardingOne" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingTwo"
+        android:name="com.example.hospital_management_app.UI.Fragment.OnboardingTwo"
+        android:label="fragment_onboarding_two"
+        tools:layout="@layout/fragment_onboarding_two" >
+        <action
+            android:id="@+id/action_onboardingTwo_to_onboardingThree"
+            app:destination="@id/onboardingThree"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/onboardingTwo" />
+        <action
+
+            android:id="@+id/action_onboardingTwo_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom"
+            app:popUpTo="@id/onboardingOne" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingThree"
+        android:name="com.example.hospital_management_app.UI.Fragment.OnboardingThree"
+        android:label="fragment_onboarding_three"
+        tools:layout="@layout/fragment_onboarding_three" >
+        <action
+
+            android:id="@+id/action_onboardingThree_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom"
+            app:popUpTo="@id/onboardingOne" />
+    </fragment>
+</navigation>

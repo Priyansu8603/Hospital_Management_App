@@ -1,17 +1,21 @@
 [versions]
-agp = "8.5.0"
+agp = "8.5.1"
 androidxEspressoCore = "3.6.1"
 androidxJunit = "1.2.1"
 androidxJunitVersion = "1.2.1"
 appcompatVersion = "1.7.0"
+ccp = "2.5.0"
 circleimageview = "3.1.0"
 coordinatorlayout = "1.2.0"
 coreKtxVersion = "1.13.1"
 dotsindicator = "5.0"
 dotsindicatorVersion = "5.0"
 espressoCoreVersion = "3.6.1"
-fragment = "1.8.1"
+firebaseBom = "33.1.2"
+fragment = "1.8.2"
 glide = "4.12.0"
+googleMaterial = "1.12.0"
+googleServices = "4.4.2"
 hiltAndroidGradlePlugin = "2.48"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
@@ -22,15 +26,25 @@ appcompat = "1.7.0"
 kotlinGradlePlugin = "1.6.21"
 kotlinxCoroutinesCore = "1.7.3"
 legacySupportV4 = "1.0.0"
-lifecycleViewmodelKtx = "2.8.3"
+lifecycleViewmodelKtx = "2.8.4"
 loggingInterceptor = "4.5.0"
 material = "1.12.0"
-activity = "1.9.0"
+activity = "1.9.1"
 constraintlayout = "2.1.4"
 materialVersion = "1.12.0"
 navigationSafeArgsGradlePlugin = "2.7.7"
+otpview = "3.1.0"
+pinview = "1.4.4"
 retrofit = "2.9.0"
 roomRuntime = "2.6.1"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
+firebaseAuthKtx = "23.0.0"
+firebaseFirestoreKtx = "25.0.0"
+firebaseStorageKtx = "21.0.0"
+shimmer = "0.5.0"
+firebaseAuth = "23.0.0"
+firebaseFirestore = "25.0.0"
 
 [libraries]
 androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -51,12 +65,17 @@ androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx",
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+ccp = { module = "com.hbb20:ccp", version.ref = "ccp" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 dotsindicator-v42 = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicatorVersion" }
+firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+google-firebase-database = { module = "com.google.firebase:firebase-database" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
@@ -72,9 +91,20 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 material-v1110 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+material-v150 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+otpview = { module = "com.github.mukeshsolanki.android-otpview-pinview:otpview", version.ref = "otpview" }
+pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

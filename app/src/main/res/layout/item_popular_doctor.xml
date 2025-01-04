@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="232dp"
+    android:layout_width="220dp"
     app:cardCornerRadius="25dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
     android:elevation="20dp"
-    android:layout_height="290dp"
+    android:layout_height="wrap_content"
+    app:strokeColor="@color/grey"
+    app:strokeWidth="2dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/image" />
+            android:src="@drawable/doctor_five" />
 
         <TextView
             android:id="@+id/name_txt"
@@ -47,18 +51,19 @@
             app:layout_constraintEnd_toEndOf="@id/name_txt"
             app:layout_constraintTop_toBottomOf="@id/name_txt"/>
 
-        <RatingBar
+        <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="5dp"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:rating="4"
+            android:layout_marginTop="5dp"
+            style="?attr/ratingBarStyleIndicator"
+            android:layout_marginBottom="10dp"
+            android:rating="3.5"
             android:progressTint="@color/gold"
-            android:backgroundTint="@color/grey"
-            android:stepSize="1"
+            android:secondaryProgressTint="@color/gold"
+            android:isIndicator="true"
+            android:stepSize="0.5"
+            android:clickable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/job_txt"
             app:layout_constraintEnd_toEndOf="@id/job_txt"

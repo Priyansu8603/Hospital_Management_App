@@ -1,18 +1,69 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Hospital_Management_App" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         Customize your light theme here.
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/green</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+
+
+
+
     </style>
 
     <style name="Theme.Hospital_Management_App" parent="Base.Theme.Hospital_Management_App" />
 
-    <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textColor">@android:color/white</item>
-
-    </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/white</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:background">@drawable/custom_dialog_background</item>
+    </style>
+
+    <style name="CustomCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/heart_selected</item>
+    </style>
+
+    <!-- Add this style in res/values/styles.xml or themes.xml -->
+    <style name="CustomDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize the color of the date picker header -->
+        <item name="colorAccent">@color/green</item> <!-- Change this to your desired color -->
+        <item name="android:textColorPrimary">@color/black</item> <!-- Change this to your desired color -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerPositiveButton</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerNegativeButton</item>
+        <item name="android:datePickerDialogTheme">@style/CustomDatePickerDialog</item>
+    </style>
+
+    <!-- Style for the positive button (OK) -->
+    <style name="DatePickerPositiveButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/green</item> <!-- Set the text color for the OK button -->
+    </style>
+
+    <!-- Style for the negative button (Cancel) -->
+    <style name="DatePickerNegativeButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/grey</item> <!-- Set the text color for the Cancel button -->
+    </style>
+
+    <style name="CustomDatePickerDialog" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarHeaderDivider">@color/black</item> <!-- Header divider color -->
+        <item name="materialCalendarHeaderToggleButton">@color/grey</item> <!-- Toggle button color -->
+        <item name="colorOnSurface">@color/white</item> <!-- Selected date color -->
+        <item name="materialCalendarFullscreenTheme">@style/CustomDatePickerFullscreen</item>
+    </style>
+
+    <style name="CustomDatePickerFullscreen" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+        <item name="colorAccent">@color/grey</item>
     </style>
 </resources>
