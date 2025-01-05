@@ -5,6 +5,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -51,14 +52,21 @@ dependencies {
     implementation(libs.material.v1110)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.firebase.database)
+    implementation(libs.androidx.activity)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit.v115)
     androidTestImplementation(libs.androidx.espresso.core.v351)
-    implementation (libs.androidx.coordinatorlayout)
+    implementation(libs.androidx.coordinatorlayout)
 
 
     // Navigation Components
-    implementation (libs.androidx.fragment)
+    implementation(libs.androidx.fragment)
 
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -95,8 +103,26 @@ dependencies {
     implementation(libs.glide)
     ksp(libs.compiler)
 
-    implementation (libs.dotsindicator.v42)
+    implementation(libs.dotsindicator.v42)
 
-    implementation (libs.circleimageview)
+    implementation(libs.circleimageview)
+
+    implementation(libs.material.v150)
+
+
+    // Import the BoM for the Firebase platform
+    implementation(platform(libs.firebase.bom))
+
+    implementation(libs.firebase.appcheck.playintegrity)
+
+    // Add the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation(libs.google.firebase.database)
+    implementation (libs.ccp)
+    implementation (libs.pinview)
+    implementation (libs.shimmer)
+
+
+
 
 }

@@ -28,9 +28,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
+                android:weightSum="1"
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/back_btn_my_appoint_lyt"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -41,7 +43,7 @@
 
                 <TextView
                     android:id="@+id/tvToolbarTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="15dp"
@@ -51,6 +53,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -62,7 +65,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="100dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
                     android:background="@drawable/back_bg_btn"
 
                     android:src="@drawable/baseline_filter_list_24" />

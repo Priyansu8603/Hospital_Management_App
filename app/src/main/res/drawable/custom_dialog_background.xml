@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/custom_dialog_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- or your desired background color -->
+    <corners android:radius="16dp" /> <!-- Set your desired corner radius here -->
+
+</shape>

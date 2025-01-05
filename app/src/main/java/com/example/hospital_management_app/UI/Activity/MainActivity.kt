@@ -14,12 +14,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.hospital_management_app.R
 import com.example.hospital_management_app.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private var _binding: ActivityMainBinding?=null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
@@ -47,6 +52,12 @@ class MainActivity : AppCompatActivity() {
 
         // Adjust window soft input mode to resize when keyboard is shown
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
 
     }
 }

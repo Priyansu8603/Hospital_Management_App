@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavouriteDoctor">
+    tools:context=".FavouriteDoctorFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,6 +31,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/back_btn_fav_Doc_lyt"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -61,6 +62,7 @@
             </LinearLayout>
 
             <EditText
+                android:id="@+id/searchbar_favouriteFrag"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
@@ -74,6 +76,8 @@
                 android:hint="Search..."
                 android:inputType="text"
                 android:padding="8dp"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
                 android:paddingStart="15dp"
                 android:textColor="#7E7878"
                 android:textStyle="italic"
@@ -93,10 +97,10 @@
                     android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:padding="10dp"
                         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                         app:spanCount="2"
-                        android:id="@+id/recyclerView"
+                        android:layout_marginBottom="50dp"
+                        android:id="@+id/favourite_doctor_recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         tools:listitem="@layout/item_favourite_doctor"
@@ -106,6 +110,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
+                        android:id="@+id/favorite_PB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"

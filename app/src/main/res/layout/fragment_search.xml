@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/main_screen_bg"
-        android:clipToPadding="false"
-        android:paddingBottom="56dp"
+        android:clipToPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +30,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/back_btn_find_doc_lyt"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"

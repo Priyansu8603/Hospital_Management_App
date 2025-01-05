@@ -24,6 +24,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:weightSum="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -31,6 +32,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/back_Btn_payment_lyt"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -51,6 +53,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -62,7 +65,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="170dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
                     android:background="@drawable/back_bg_btn"
 
                     android:src="@drawable/baseline_filter_list_24" />

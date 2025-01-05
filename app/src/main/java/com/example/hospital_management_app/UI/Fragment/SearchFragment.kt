@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.navigation.fragment.findNavController
 import com.example.hospital_management_app.databinding.FragmentSearchBinding
 
 
@@ -33,6 +34,10 @@ class SearchFragment : Fragment() {
 
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(binding.searchbarSearchFrag.findFocus(), InputMethodManager.SHOW_IMPLICIT)
+
+        binding.backBtnFindDocLyt.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroyView() {

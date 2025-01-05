@@ -8,12 +8,16 @@
 
     <fragment
         android:id="@+id/favouriteDoctor"
-        android:name="com.example.hospital_management_app.FavouriteDoctor"
+        android:name="com.example.hospital_management_app.FavouriteDoctorFragment"
         android:label="fragment_favourite_doctor"
-        tools:layout="@layout/fragment_favourite_doctor" >
+        tools:layout="@layout/fragment_favourite_doctor">
         <action
             android:id="@+id/action_favouriteDoctor_to_doctorDetail"
-            app:destination="@id/doctorDetail" />
+            app:destination="@id/doctorDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/myAppointment"
@@ -24,7 +28,10 @@
         android:id="@+id/doctorDetail"
         android:name="com.example.hospital_management_app.DoctorDetail"
         android:label="fragment_doctor_detail"
-        tools:layout="@layout/fragment_doctor_detail" >
+        tools:layout="@layout/fragment_doctor_detail">
+        <argument
+            android:name="doctor_Id"
+            app:argType="string" />
         <action
             android:id="@+id/action_doctorDetail_to_takeAppointment"
             app:destination="@id/takeAppointment" />
@@ -33,7 +40,7 @@
         android:id="@+id/takeAppointment"
         android:name="com.example.hospital_management_app.TakeAppointment"
         android:label="fragment_take_appointment"
-        tools:layout="@layout/fragment_take_appointment" >
+        tools:layout="@layout/fragment_take_appointment">
         <action
             android:id="@+id/action_takeAppointment_to_appointmentDetail"
             app:destination="@id/appointmentDetail" />
@@ -47,7 +54,7 @@
         android:id="@+id/featureDoctor"
         android:name="com.example.hospital_management_app.UI.Fragment.FeatureDoctor"
         android:label="fragment_feature_doctor"
-        tools:layout="@layout/fragment_feature_doctor" >
+        tools:layout="@layout/fragment_feature_doctor">
         <action
             android:id="@+id/action_featureDoctor_to_doctorDetail"
             app:destination="@id/doctorDetail" />
@@ -56,7 +63,7 @@
         android:id="@+id/popularDoctor"
         android:name="com.example.hospital_management_app.UI.Fragment.PopularDoctor"
         android:label="fragment_popular_doctor"
-        tools:layout="@layout/fragment_popular_doctor" >
+        tools:layout="@layout/fragment_popular_doctor">
         <action
             android:id="@+id/action_popularDoctor_to_doctorDetail"
             app:destination="@id/doctorDetail" />
@@ -65,7 +72,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.hospital_management_app.UI.Fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_popularDoctor"
             app:destination="@id/popularDoctor" />
@@ -74,7 +81,22 @@
             app:destination="@id/featureDoctor" />
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_profile"
+            app:destination="@id/profile"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctorDetail"
+            app:destination="@id/doctorDetail" />
     </fragment>
     <fragment
         android:id="@+id/paymentsFragment"
@@ -84,11 +106,21 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.hospital_management_app.UI.Fragment.SearchFragment"
-        android:label="SearchFragment" >
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment_to_doctorDetail"
-            app:destination="@id/doctorDetail" />
+            app:destination="@id/doctorDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.hospital_management_app.UI.Fragment.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 
 </navigation>
