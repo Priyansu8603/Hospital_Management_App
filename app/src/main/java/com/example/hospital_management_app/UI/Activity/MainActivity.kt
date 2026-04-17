@@ -14,9 +14,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.hospital_management_app.R
 import com.example.hospital_management_app.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.hilt.android.AndroidEntryPoint
+// import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+// @AndroidEntryPoint  // Hilt disabled for demo
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding?=null
     private val binding get() = _binding!!

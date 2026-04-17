@@ -14,9 +14,9 @@ import com.example.hospital_management_app.UI.Adapter.FavouriteDoctorAdapter
 import com.example.hospital_management_app.UI.Fragment.HomeFragmentDirections
 import com.example.hospital_management_app.ViewModel.FavouriteDoctorViewModel
 import com.example.hospital_management_app.databinding.FragmentFavouriteDoctorBinding
-import dagger.hilt.android.AndroidEntryPoint
+// import dagger.hilt.android.AndroidEntryPoint  // Hilt disabled for demo
 
-@AndroidEntryPoint
+// @AndroidEntryPoint  // Hilt disabled for demo
 class FavouriteDoctorFragment : Fragment() {
 
     private var _binding: FragmentFavouriteDoctorBinding? = null
@@ -61,14 +61,8 @@ class FavouriteDoctorFragment : Fragment() {
     private fun bindObservers() {
         // Observe changes in favouriteDoctors list from ViewModel
         favouriteDoctorViewModel.favouriteDoctors.observe(viewLifecycleOwner) { doctors ->
-            binding.favoritePB.visibility = View.GONE // Hide ProgressBar
-
-            // Submit list to adapter if not null or empty
-            if (doctors != null && doctors.isNotEmpty()) {
-                favouriteDoctorAdapter.differ.submitList(doctors)
-            } else {
-                Toast.makeText(requireContext(), "No favourite doctors found.", Toast.LENGTH_SHORT).show()
-            }
+            binding.favoritePB.visibility = View.GONE
+            favouriteDoctorAdapter.differ.submitList(doctors ?: emptyList())
         }
     }
 

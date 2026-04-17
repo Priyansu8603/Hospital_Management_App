@@ -41,6 +41,9 @@
         android:name="com.example.hospital_management_app.TakeAppointment"
         android:label="fragment_take_appointment"
         tools:layout="@layout/fragment_take_appointment">
+        <argument
+            android:name="doctorId"
+            app:argType="string" />
         <action
             android:id="@+id/action_takeAppointment_to_appointmentDetail"
             app:destination="@id/appointmentDetail" />

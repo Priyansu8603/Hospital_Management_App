@@ -1,574 +1,705 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoctorDetail">
-    <ScrollView
+    android:background="#F5F5F5">
+
+    <!-- Top green header -->
+    <LinearLayout
+        android:id="@+id/topBar_Linear_lyt"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/main_screen_bg"
-        android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="200dp"
+        android:background="@drawable/top_green_bg"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
+            <ImageButton
+                android:id="@+id/back_btn_doc_detail_lyt"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/back_bg_btn"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Doctor Details"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/rubik"/>
+
+            <ImageButton
+                android:id="@+id/heart_favourite"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/back_bg_btn"
+                android:src="@drawable/heart1"
+                android:padding="6dp" />
+        </LinearLayout>
+
+        <!-- Doctor image row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/doctor_one"
+                android:background="@drawable/back_bg_btn"/>
 
             <LinearLayout
-                android:id="@+id/topBar_Linear_lyt"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:weightSum="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageButton
-                    android:id="@+id/back_btn_doc_detail_lyt"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:background="@drawable/back_bg_btn"
-                    android:paddingStart="10dp"
-                    android:src="@drawable/baseline_arrow_back_ios_24" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="14dp">
 
                 <TextView
-                    android:id="@+id/tvToolbarTitle"
+                    android:id="@+id/name_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/rubik"
-                    android:padding="5dp"
-                    android:text="Doctor Details"
-                    android:textColor="@color/black"
+                    android:text="Dr. Sarah Johnson"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:fontFamily="@font/rubik"/>
 
-                <ImageButton
-                    android:id="@+id/search_btn_doc_detail_lyt"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="@drawable/back_bg_btn"
-                    android:padding="5dp"
+                <TextView
+                    android:id="@+id/job_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardiologist"
+                    android:textColor="#DDFFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/rubik"
+                    android:layout_marginTop="2dp"/>
 
-                    android:src="@drawable/search" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp">
 
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/green_dot"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City Heart Hospital"
+                        android:textColor="#DDFFFFFF"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/rubik"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/green_dot"/>
+                    <TextView
+                        android:id="@+id/location_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Green Valley, New York"
+                        android:textColor="#DDFFFFFF"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/rubik"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
 
             </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
+    <!-- White card overlapping header -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="185dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Stats card -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/detail_cardView"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="15dp"
-                android:visibility="visible"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topBar_Linear_lyt">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="140dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/image"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <TextView
-                            android:id="@+id/name_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:fontFamily="@font/rubik"
-                            android:text="Dr. John Johnson"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/imageView"
-                            app:layout_constraintStart_toEndOf="@id/imageView"
-                            app:layout_constraintTop_toTopOf="@id/imageView"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <TextView
-                            android:id="@+id/job_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:fontFamily="@font/rubik"
-                            android:text="Dentist"
-                            android:textColor="@color/green"
-                            android:textSize="20sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="@id/name_txt"
-                            app:layout_constraintTop_toBottomOf="@id/name_txt" />
-
-                        <TextView
-                            android:id="@+id/experience_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:fontFamily="@font/rubik"
-                            android:gravity="left"
-                            android:text=""
-                            android:textColor="@color/grey"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="@id/job_txt"
-                            app:layout_constraintTop_toBottomOf="@id/job_txt" />
-
-                        <TextView
-                            android:id="@+id/yrs_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/rubik"
-                            android:layout_marginStart="5dp"
-                            android:gravity="left"
-                            android:text="Years experience"
-                            android:textColor="@color/grey"
-                            android:textSize="20sp"
-                            android:textStyle="normal"
-                            app:layout_constraintBaseline_toBaselineOf="@id/experience_txt"
-                            app:layout_constraintBottom_toBottomOf="@id/experience_txt"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.1"
-                            app:layout_constraintStart_toEndOf="@id/experience_txt"
-                            app:layout_constraintTop_toTopOf="@id/experience_txt" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar"
-                            style="?android:attr/ratingBarStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:backgroundTint="@color/grey"
-                            android:progressTint="@color/gold"
-                            android:rating="4"
-                            android:scaleX="1.25"
-                            android:scaleY="1.25"
-                            android:stepSize="0.5"
-                            app:layout_constraintStart_toStartOf="@id/yrs_txt"
-                            app:layout_constraintTop_toBottomOf="@id/experience_txt" />
-
-                        <TextView
-                            android:id="@+id/rating_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="18dp"
-                            android:fontFamily="@font/rubik"
-                            android:text=""
-                            android:textColor="@color/green"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBaseline_toBottomOf="@id/ratingBar"
-                            app:layout_constraintBottom_toBottomOf="@id/ratingBar"
-                            app:layout_constraintStart_toEndOf="@id/ratingBar"
-                            app:layout_constraintTop_toTopOf="@id/ratingBar" />
-
-
-                        <TextView
-                            android:id="@+id/nxt_available_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:fontFamily="@font/rubik"
-                            android:text="Next Available"
-                            android:textColor="@color/green"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@id/imageView"
-                            app:layout_constraintStart_toStartOf="@id/imageView"
-                            app:layout_constraintTop_toBottomOf="@id/imageView" />
-
-                        <TextView
-                            android:id="@+id/timing_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/rubik"
-                            android:text="10:00 AM tommorow"
-                            android:textColor="@color/grey"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@id/nxt_available_txt"
-                            app:layout_constraintTop_toBottomOf="@id/nxt_available_txt" />
-
-                        <TextView
-                            android:id="@+id/Rupee_Sign"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/rubik"
-                            android:text="Rs."
-                            android:textColor="@color/green"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/timing_txt"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.25"
-                            app:layout_constraintStart_toEndOf="@id/timing_txt"
-                            app:layout_constraintTop_toTopOf="@id/timing_txt"
-                            app:layout_constraintVertical_bias="1.0" />
-
-                        <TextView
-                            android:id="@+id/pricing_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/rubik"
-                            android:gravity="center"
-                            android:text="28.00/hr"
-                            android:textColor="@color/grey"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/Rupee_Sign"
-                            app:layout_constraintStart_toEndOf="@id/Rupee_Sign"
-                            app:layout_constraintTop_toTopOf="@id/Rupee_Sign"
-                            app:layout_constraintVertical_bias="1.0" />
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/button_bg"
-                            android:fontFamily="@font/rubik"
-                            android:text="Book Now"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/timing_txt" />
-
-
-                        <ImageButton
-                            android:id="@+id/heart_favourite"
-                            android:padding="5dp"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:background="@drawable/flag_transparent"
-                            android:src="@drawable/heart1"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/cardViewShimmerView"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="15dp"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topBar_Linear_lyt">
-
-                <include layout="@layout/shimmer_layout" />
-
-
-            </com.facebook.shimmer.ShimmerFrameLayout>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/count_patient_cardView"
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="15dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="30dp"
-                android:layout_marginBottom="25dp"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
+                    <!-- Stats row -->
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:layout_weight="0.33"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/profile"/>
+                            <TextView
+                                android:id="@+id/experience_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8 yrs Experience"
+                                android:textSize="12sp"
+                                android:textColor="#333333"
+                                android:fontFamily="@font/rubik"
+                                android:layout_marginStart="4dp"/>
+                        </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <RatingBar
+                                android:id="@+id/ratingBar"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:progressTint="@color/gold"
+                                android:rating="4.8"
+                                android:stepSize="0.5"
+                                android:isIndicator="true"/>
+                            <TextView
+                                android:id="@+id/rating_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.8"
+                                android:textSize="12sp"
+                                android:textColor="@color/green"
+                                android:fontFamily="@font/rubik"
+                                android:layout_marginStart="4dp"/>
                             <TextView
                                 android:id="@+id/ReviewTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/poppinmedium"
-                                android:text="100"
-                                android:textStyle="bold"
-                                android:textColor="@color/green"
-                                android:textSize="18sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:text=" (463 reviews)"
+                                android:textSize="11sp"
+                                android:textColor="@color/grey"
+                                android:fontFamily="@font/rubik"/>
+                        </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/green_dot"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/poppinmedium"
+                                android:text="1.5 km"
                                 android:textSize="12sp"
-                                android:text="Total Reviews"
-                                android:textColor="@color/grey"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@id/ReviewTxt"
-                                app:layout_constraintStart_toStartOf="@id/ReviewTxt"
-                                app:layout_constraintTop_toBottomOf="@id/ReviewTxt"
-                                app:layout_constraintVertical_bias="0.0" />
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+                                android:textColor="#333333"
+                                android:fontFamily="@font/rubik"
+                                android:layout_marginStart="4dp"/>
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <View
-                        android:layout_gravity="center"
-                        android:layout_width="2dp"
-                        android:layout_height="60dp"
-                        android:background="@color/grey" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:layout_weight="0.33"
-                        android:orientation="vertical">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-
-                            <TextView
-                                android:id="@+id/ongoing_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/poppinmedium"
-                                android:text="500"
-                                android:textColor="@color/green"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/poppinmedium"
-                                android:text="Ongoing"
-                                android:textSize="12sp"
-                                android:textColor="@color/grey"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@id/ongoing_txt"
-                                app:layout_constraintStart_toStartOf="@id/ongoing_txt"
-                                app:layout_constraintTop_toBottomOf="@id/ongoing_txt"
-                                app:layout_constraintVertical_bias="0.0" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_gravity="center"
-                        android:layout_width="2dp"
-                        android:layout_height="60dp"
-                        android:background="@color/grey" />
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:layout_weight="0.33"
-                        android:orientation="vertical">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-
-                            <TextView
-                                android:id="@+id/totalPatient_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/poppinmedium"
-                                android:text="700"
-                                android:textColor="@color/green"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/poppinmedium"
-                                android:text="Patient"
-                                android:textColor="@color/grey"
-                                android:textSize="12sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@id/totalPatient_txt"
-                                app:layout_constraintStart_toStartOf="@id/totalPatient_txt"
-                                app:layout_constraintTop_toBottomOf="@id/totalPatient_txt"
-                                app:layout_constraintVertical_bias="0.0" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    </LinearLayout>
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/desc_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Experienced cardiologist specializing in heart health, offering personalized care and advanced diagnostic services."
+                        android:textSize="13sp"
+                        android:textColor="#444444"
+                        android:lineSpacingMultiplier="1.4"
+                        android:fontFamily="@font/rubik"
+                        android:background="@drawable/card_light_bg"
+                        android:padding="10dp"/>
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
+            <!-- Shimmer placeholder (hidden by default) -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/cardViewShimmerView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+                <include layout="@layout/shimmer_layout"/>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!-- Tabs -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:id="@+id/tab_about"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About Doctor"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/rubik"
+                        android:textColor="@color/grey"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tab_reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reviews"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/rubik"
+                        android:textColor="@color/grey"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginStart="6dp"/>
+
+                    <TextView
+                        android:id="@+id/tab_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/rubik"
+                        android:textColor="@color/grey"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginStart="6dp"/>
+
+                    <TextView
+                        android:id="@+id/tab_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Appointment"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/rubik"
+                        android:textColor="@color/green"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginStart="6dp"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Booking section card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/count_patient_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <!-- Date chips -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/date_today"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Today"
+                                android:textSize="13sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/rubik"
+                                android:background="@drawable/date_selected_bg"
+                                android:paddingStart="18dp"
+                                android:paddingEnd="18dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"/>
+
+                            <TextView
+                                android:id="@+id/date_tomorrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tomorrow"
+                                android:textSize="13sp"
+                                android:textColor="#333333"
+                                android:fontFamily="@font/rubik"
+                                android:background="@drawable/date_unselected_bg"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:layout_marginStart="8dp"/>
+
+                            <TextView
+                                android:id="@+id/date_day3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fri 17 Apr"
+                                android:textSize="13sp"
+                                android:textColor="#333333"
+                                android:fontFamily="@font/rubik"
+                                android:background="@drawable/date_unselected_bg"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:layout_marginStart="8dp"/>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/date_label_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wed 16 Apr"
+                        android:textSize="12sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/rubik"
+                        android:layout_marginTop="6dp"/>
+
+                    <!-- Time slots grid row 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp">
+
+                        <TextView
+                            android:id="@+id/slot_0"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="10:00 AM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="10:30 AM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="11:00 AM"
+                            android:textSize="12sp"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_selected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="11:30 AM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12:30 PM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                    </LinearLayout>
+
+                    <!-- Time slots grid row 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:id="@+id/slot_5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="01:30 PM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="02:00 PM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="02:30 PM"
+                            android:textSize="12sp"
+                            android:textColor="#333333"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unselected_bg"/>
+
+                        <TextView
+                            android:id="@+id/slot_8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No Slots"
+                            android:textSize="11sp"
+                            android:textColor="@color/grey"
+                            android:fontFamily="@font/rubik"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/time_slot_unavailable_bg"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <!-- Confirm button -->
+                    <Button
+                        android:id="@+id/confirm_btn"
+                        android:layout_width="200dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/btn_green_rounded"
+                        android:text="Confirm"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/rubik"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Review card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="15dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="30dp"
-                app:layout_constraintTop_toBottomOf="@id/count_patient_cardView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/profile"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="John D."
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#222222"
+                                android:fontFamily="@font/rubik"/>
+
+                            <RatingBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:progressTint="@color/gold"
+                                android:rating="5"
+                                android:isIndicator="true"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 days ago"
+                            android:textSize="12sp"
+                            android:textColor="@color/grey"
+                            android:fontFamily="@font/rubik"/>
+                    </LinearLayout>
 
                     <TextView
-                        android:text="Description"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/rubik"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-
-                    <View
-                        android:background="@color/grey"
-                        android:layout_marginTop="@dimen/dp_2"
-                        android:layout_width="match_parent"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_height="2dp"/>
-
-                    <TextView
-                        android:id="@+id/desc_txt"
-                        android:text="Description"
-                        android:textSize="15sp"
-                        android:lineSpacingMultiplier="1.5"
-                        android:fontFamily="@font/rubik"
-                        android:layout_marginStart="15dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:text="Excellent doctor, very compassionate and thorough in her consultation."
+                        android:textSize="13sp"
+                        android:textColor="#444444"
+                        android:lineSpacingMultiplier="1.4"
+                        android:fontFamily="@font/rubik"/>
+
+                    <!-- Second confirm button in reviews -->
+                    <Button
+                        android:id="@+id/totalPatient_txt"
+                        android:layout_width="200dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/btn_green_rounded"
+                        android:text="Confirm"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/rubik"/>
 
                 </LinearLayout>
-
-
-
-
             </androidx.cardview.widget.CardView>
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/count_patient_cardView"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
+    <!-- Hidden views kept for code compatibility -->
+    <View android:id="@+id/ongoing_txt" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+    <View android:id="@+id/progressBar" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

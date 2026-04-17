@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.content.Intent
 import androidx.navigation.fragment.findNavController
 import com.example.hospital_management_app.R
+import com.example.hospital_management_app.UI.Activity.MainActivity
 import com.example.hospital_management_app.databinding.FragmentOnboardingThreeBinding
 
 
@@ -28,11 +30,13 @@ class OnboardingThree : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.GetStartedBtn.setOnClickListener{
-            findNavController().navigate(R.id.action_onboardingThree_to_login_fragment)
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         }
 
         binding.skipBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_onboardingThree_to_login_fragment)
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         }
 
     }

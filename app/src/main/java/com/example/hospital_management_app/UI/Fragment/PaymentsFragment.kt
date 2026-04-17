@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.hospital_management_app.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.hospital_management_app.Data.AppRepository
+import com.example.hospital_management_app.UI.Adapter.AppointmentAdapter
 import com.example.hospital_management_app.databinding.FragmentPaymentsBinding
 
 class PaymentsFragment : Fragment() {
 
     private var _binding: FragmentPaymentsBinding? = null
     private val binding get() = _binding!!
-
+    private lateinit var adapter: AppointmentAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +30,14 @@ class PaymentsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.backBtnPaymentLyt.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        adapter = AppointmentAdapter()
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
+
+        AppRepository.bookedAppointments.observe(viewLifecycleOwner) { list ->
+            adapter.differ.submitList(list ?: emptyList())
         }
     }
 

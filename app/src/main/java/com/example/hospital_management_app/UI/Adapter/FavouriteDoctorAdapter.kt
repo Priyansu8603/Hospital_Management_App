@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.hospital_management_app.Data.DoctorModel
+import com.example.hospital_management_app.Data.DummyData
 import com.example.hospital_management_app.databinding.ItemFavouriteDoctorBinding
 
 
@@ -17,13 +18,11 @@ class FavouriteDoctorAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(doctor: DoctorModel) {
             binding.apply {
-                Glide.with(itemView).load(doctor.image?.get(0)).into(imageView)
+                val drawableRes = DummyData.getDoctorDrawable(doctor.image?.get(0) ?: "doctor_one")
+                imageView.setImageResource(drawableRes)
                 nameTxt.text = doctor.name
                 jobTxt.text = doctor.specialization
-
-                root.setOnClickListener {
-                    onDoctorClick(doctor.id)
-                }
+                root.setOnClickListener { onDoctorClick(doctor.id) }
             }
         }
     }

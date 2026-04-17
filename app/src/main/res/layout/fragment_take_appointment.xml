@@ -1,14 +1,326 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TakeAppointment">
+    android:background="#F5F5F5">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/pdfContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp"
+        android:background="#F5F5F5">
 
-</FrameLayout>
+        <!-- Top green bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/top_green_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/success_circle_bg"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="@color/green"
+                    android:textSize="36sp"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/success_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Appointment Booked Successfully"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Your appointment has been confirmed.\nPlease arrive 10 minutes early."
+            android:textSize="13sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/rubik"
+            android:lineSpacingMultiplier="1.4"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"/>
+
+        <!-- Doctor info card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/doctor_image"
+                    android:layout_width="70dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/doctor_one"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:id="@+id/doctor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sarah Johnson"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:fontFamily="@font/rubik"/>
+
+                    <TextView
+                        android:id="@+id/doctor_spec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiologist"
+                        android:textSize="13sp"
+                        android:textColor="@color/green"
+                        android:fontFamily="@font/rubik"
+                        android:layout_marginTop="2dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="4dp">
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@drawable/green_dot"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City Heart Hospital"
+                            android:textSize="12sp"
+                            android:textColor="@color/grey"
+                            android:fontFamily="@font/rubik"
+                            android:layout_marginStart="4dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8 yrs ⭐ 4.8"
+                            android:textSize="12sp"
+                            android:textColor="@color/grey"
+                            android:fontFamily="@font/rubik"/>
+                        <TextView
+                            android:id="@+id/price_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  ₹ 800"
+                            android:textSize="13sp"
+                            android:textColor="#111111"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/rubik"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmed"
+                    android:textSize="11sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/rubik"
+                    android:background="@drawable/confirmed_badge_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Booking details card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/calendar"/>
+                    <TextView android:id="@+id/date_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wed, 16 Apr 2026" android:textSize="14sp" android:textColor="#222222" android:fontFamily="@font/rubik" android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/green_dot"/>
+                    <TextView android:id="@+id/time_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:00 AM" android:textSize="14sp" android:textColor="#222222" android:fontFamily="@font/rubik" android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/profile"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="John Doe" android:textSize="14sp" android:textColor="#222222" android:fontFamily="@font/rubik" android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/payment"/>
+                    <TextView android:id="@+id/booking_id_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="APT-CH-160426-1100" android:textSize="13sp" android:textColor="#222222" android:fontFamily="@font/rubik" android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Download Receipt button -->
+        <Button
+            android:id="@+id/download_receipt_btn"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_green_rounded"
+            android:text="⬇  Download Receipt"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubik"/>
+
+        <!-- Payment summary card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/payment"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Booking ID: APT-CH-160426-1100" android:textSize="13sp" android:textColor="#333333" android:fontFamily="@font/rubik" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/payment"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Payment Method: UPI / Card" android:textSize="13sp" android:textColor="#333333" android:fontFamily="@font/rubik" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/green_dot"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Total Paid" android:textSize="14sp" android:textStyle="bold" android:textColor="#111111" android:fontFamily="@font/rubik" android:layout_marginStart="8dp"/>
+                    <TextView android:id="@+id/total_paid_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹ 800" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/green" android:fontFamily="@font/rubik"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  Receipt available for download ›" android:textSize="11sp" android:textColor="@color/grey" android:fontFamily="@font/rubik"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Navigation options -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/back_to_home_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Back to Home" android:textSize="14sp" android:textColor="#222222" android:fontFamily="@font/rubik"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="18sp" android:textColor="@color/grey"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE"/>
+
+                <LinearLayout
+                    android:id="@+id/book_another_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Book Another Appointment" android:textSize="14sp" android:textColor="#222222" android:fontFamily="@font/rubik"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textSize="18sp" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom Download Receipt -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_green_rounded"
+            android:text="⬇  Download Receipt"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubik"/>
+
+    </LinearLayout>
+</ScrollView>

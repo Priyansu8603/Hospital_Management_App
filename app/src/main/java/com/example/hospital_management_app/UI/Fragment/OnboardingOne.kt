@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.content.Intent
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.example.hospital_management_app.R
+import com.example.hospital_management_app.UI.Activity.MainActivity
 import com.example.hospital_management_app.databinding.FragmentOnboardingOneBinding
 
 
@@ -34,7 +36,8 @@ class OnboardingOne : Fragment() {
         }
 
         binding.skipBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_onboardingOne_to_login_fragment)
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         }
         // Handle the back press to close the app instead of navigating to the splash screen
         requireActivity().onBackPressedDispatcher.addCallback(

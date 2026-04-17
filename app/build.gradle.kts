@@ -3,8 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
+    // id("kotlin-kapt")  // Disabled for demo - causes JDK17 issues
+    // id("com.google.dagger.hilt.android")  // Disabled for demo
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -76,9 +76,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit.v120)
     androidTestImplementation(libs.androidx.espresso.core.v360)
 
-    // Hilt for Dependency Injection
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    // Hilt for Dependency Injection - disabled for demo
+    // implementation(libs.hilt.android)
+    // kapt(libs.hilt.android.compiler)
 
 
     // Architectural Components
@@ -121,8 +121,7 @@ dependencies {
     implementation (libs.ccp)
     implementation (libs.pinview)
     implementation (libs.shimmer)
-
-
+    implementation(kotlin("script-runtime"))
 
 
 }

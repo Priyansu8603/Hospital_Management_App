@@ -23,13 +23,11 @@ import com.example.hospital_management_app.ViewModel.DoctorDetailViewModel
 import com.example.hospital_management_app.ViewModel.HomeFragmentViewModel
 import com.example.hospital_management_app.ViewModel.ProfileViewModel
 import com.example.hospital_management_app.databinding.FragmentHomeBinding
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -51,7 +49,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        featureDoctorAdapter = FeatureDoctorAdapter(::onDoctorClick,doctorDetailViewModel,viewLifecycleOwner)
+        featureDoctorAdapter = FeatureDoctorAdapter(::onDoctorClick, doctorDetailViewModel, viewLifecycleOwner)
         return binding.root
     }
 
@@ -59,32 +57,27 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.searchBarHomeFrag.setOnClickListener {
-
             findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
-
         }
 
         binding.profileIcon.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_profile)
         }
 
-        bindObservers()
         setupPopularDoctorRv()
         setupFeatureDoctorRv()
         setupViewPager()
+        bindObservers()
 
-
-
-        // Page change callback for ViewPager2
         binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                currentPage = position % circleNumber
-                updateIndicator(currentPage)
+                if (circleNumber > 0) {
+                    currentPage = position % circleNumber
+                    updateIndicator(currentPage)
+                }
             }
         })
-
-
     }
 
     private fun onDoctorClick(doctor_Id: String?) {
@@ -152,10 +145,11 @@ class HomeFragment : Fragment() {
             }
         }
 
-        homeFragmentModel.advertisement.observe(viewLifecycleOwner){
+        homeFragmentModel.banners.observe(viewLifecycleOwner){
             when (it) {
                 is Resource.Success -> {
-                    circleNumber = it.data!!.size
+                    val bannerList = it.data!!
+                    circleNumber = bannerList.size
                     circles = mutableListOf()
                     binding.viewpagerDetails.removeAllViews() // Clear previous indicators
                     for (i in 0 until circleNumber) {
@@ -164,15 +158,14 @@ class HomeFragment : Fragment() {
                             resources.getDimensionPixelSize(R.dimen.dp_10),
                             resources.getDimensionPixelSize(R.dimen.dp_10)
                         )
-                        imageView.layoutParams = lp
                         lp.marginStart = resources.getDimensionPixelSize(R.dimen.dp_2)
+                        imageView.layoutParams = lp
                         imageView.setImageResource(R.drawable.viewpager_not_selected)
                         binding.viewpagerDetails.addView(imageView)
                         circles.add(imageView)
                     }
-                    // Initialize ViewPager2 Adapter and attach it to ViewPager2
-
-                    binding.viewPager2.adapter = ViewPagerAdapter(it.data)
+                    viewPagerAdapter = ViewPagerAdapter(bannerList)
+                    binding.viewPager2.adapter = viewPagerAdapter
                     updateIndicator(0) // Set the first indicator as selected
                     currentPage = 0
 
@@ -217,8 +210,9 @@ class HomeFragment : Fragment() {
     }
 
 
+
     private fun setupFeatureDoctorRv() {
-        featureDoctorAdapter = FeatureDoctorAdapter(::onDoctorClick,doctorDetailViewModel,viewLifecycleOwner)
+        featureDoctorAdapter = FeatureDoctorAdapter(::onDoctorClick, doctorDetailViewModel, viewLifecycleOwner)
         binding.featureDoctorRv.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = featureDoctorAdapter
@@ -248,8 +242,10 @@ class HomeFragment : Fragment() {
                 withContext(Dispatchers.Main) {
                     // Safely access binding
                     binding.let {
-                        currentPage = (currentPage + 1) % circleNumber
-                        it.viewPager2.setCurrentItem(currentPage, true)
+                        if (circleNumber > 0) {
+                            currentPage = (currentPage + 1) % circleNumber
+                            it.viewPager2.setCurrentItem(currentPage, true)
+                        }
                     }
                 }
             }

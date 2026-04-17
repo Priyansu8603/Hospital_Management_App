@@ -28,10 +28,10 @@ import com.example.hospital_management_app.Utilities.Resource
 import com.example.hospital_management_app.ViewModel.ProfileViewModel
 import com.example.hospital_management_app.databinding.FragmentProfileBinding
 import com.example.hospital_management_app.databinding.ProfileDialogLayoutBinding
-import dagger.hilt.android.AndroidEntryPoint
+// import dagger.hilt.android.AndroidEntryPoint  // Hilt disabled for demo
 import java.util.Calendar
 
-@AndroidEntryPoint
+// @AndroidEntryPoint  // Hilt disabled for demo
 class Profile : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null

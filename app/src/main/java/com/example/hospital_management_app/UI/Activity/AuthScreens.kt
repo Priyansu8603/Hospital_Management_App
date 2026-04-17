@@ -10,9 +10,9 @@ import androidx.core.view.updatePadding
 import androidx.navigation.fragment.NavHostFragment
 import com.example.hospital_management_app.R
 import com.example.hospital_management_app.databinding.ActivityAuthScreensBinding
-import dagger.hilt.android.AndroidEntryPoint
+// import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+// @AndroidEntryPoint  // Hilt disabled for demo
 class AuthScreens : AppCompatActivity() {
     private var _binding: ActivityAuthScreensBinding? = null
     private val binding get() = _binding!!
